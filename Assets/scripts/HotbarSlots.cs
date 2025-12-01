@@ -12,6 +12,8 @@ public class HotbarSlot : MonoBehaviour
         gameObject.SetActive(true);
 
         iconImage = data.icon;     
+
+        GetComponent<Image>().sprite = iconImage;
     }
 
     public void Clear()
