@@ -7,18 +7,19 @@ public class inventory : MonoBehaviour
     // calls an object of the Game Manager script
     public GameManager gameManager;
 
-    public List<string> items = new List <string>();
+  //  public List<string> items = new List <string>();
 
-    public void addItemToInventory(string itemName) 
+   public List<ItemData> items = new List<ItemData>();
+
+   public void addItemToInventory(string itemName, Sprite icon)
     {
-        items.Add(itemName);
+        items.Add(new ItemData(itemName, icon));
     }
     
-    public void removeItemFromInventory(string itemName)
+   public void removeItemFromInventory(string itemName)
     {
-        items.Remove(itemName);
+        items.RemoveAll(i => i.itemName == itemName);
     }
-
     
     
 
@@ -33,15 +34,18 @@ public class inventory : MonoBehaviour
     {
         if(gameManager.state == GameManager.GameState.GAMEPLAY)
         {
-
-                if (Input.GetKeyDown(KeyCode.Alpha1)) 
+            
+            
+           if (Input.GetKeyDown(KeyCode.Alpha1)) 
             {
-               addItemToInventory("Generic Item");
+            addItemToInventory("Generic Item", null);  
             }
+            
             if(Input.GetKeyDown(KeyCode.Alpha2))
             {
                 removeItemFromInventory("Generic Item");
             }
+            
 
         }
         
