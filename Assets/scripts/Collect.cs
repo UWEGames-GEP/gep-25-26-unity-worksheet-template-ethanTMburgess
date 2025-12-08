@@ -7,20 +7,33 @@ using System.Collections;
 public class Collect : MonoBehaviour
 {
     
-    public string itemName = "Diamond";
-    public Sprite icon;
+    public inventory playerInventory;
+    
 
    private void OnTriggerEnter(Collider other) {
 
+    Debug.Log("Collided with item");
+
     inventory playerInventory = other.GetComponent <inventory>();
+    ItemObject item = GetComponent<ItemObject>();
 
     if(playerInventory != null)
     {
-        playerInventory.addItemToInventory(itemName, icon);
-        Destroy(gameObject);
+
+       
+        playerInventory.addItemToInventory(item);
+        
+        gameObject.SetActive(false);
+       
+        
+        //Destroy(gameObject);
     }
+
    }
 
-
+   
     
 }
+
+
+

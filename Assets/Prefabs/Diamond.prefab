@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 63c482a4bd859c04f8c7f436018dfeca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 25.448755
+      value: -2.271877
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63c482a4bd859c04f8c7f436018dfeca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 1.49
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63c482a4bd859c04f8c7f436018dfeca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.326075
+      value: 1.43
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 63c482a4bd859c04f8c7f436018dfeca, type: 3}
       propertyPath: m_LocalRotation.w
@@ -84,6 +84,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 63c482a4bd859c04f8c7f436018dfeca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1825016298959739584}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 63c482a4bd859c04f8c7f436018dfeca, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4600286022977537856}
   m_SourcePrefab: {fileID: 100100000, guid: 63c482a4bd859c04f8c7f436018dfeca, type: 3}
 --- !u!1 &5633276524844088800 stripped
 GameObject:
@@ -150,8 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035d864b08dbc4a4fbb7260e9262dacc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: Diamond
-  icon: {fileID: 21300000, guid: 32c737b76f53b6140999db41e75663ee, type: 3}
+  playerInventory: {fileID: 0}
 --- !u!114 &1825016298959739584
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,3 +169,18 @@ MonoBehaviour:
   bobSpeed: 2
   bobHeight: 0.1
   spinSpeed: 70
+--- !u!114 &4600286022977537856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5633276524844088800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f59dd2d7c62d2049bf529974c3bb717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Diamond
+  icon: {fileID: 21300000, guid: 39910245570a3f348afc56a0ac56e7a8, type: 3}
+  itemPrefab: {fileID: 5633276524844088800}

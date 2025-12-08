@@ -10,15 +10,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 05ae247dfb11ce5498fd8466c689a3cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.2301846
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05ae247dfb11ce5498fd8466c689a3cc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.71033406
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05ae247dfb11ce5498fd8466c689a3cc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.3897079
+      value: 2.84
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 05ae247dfb11ce5498fd8466c689a3cc, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54,7 +54,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: c6df1958469a55f44a9c999a06972fa7, type: 2}
     - target: {fileID: 919132149155446097, guid: 05ae247dfb11ce5498fd8466c689a3cc, type: 3}
       propertyPath: m_Name
-      value: emerald
+      value: Emerald
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 05ae247dfb11ce5498fd8466c689a3cc, type: 3}
       propertyPath: m_TagString
@@ -76,6 +76,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 05ae247dfb11ce5498fd8466c689a3cc, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4567437570800827495}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 05ae247dfb11ce5498fd8466c689a3cc, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2774905249904133942}
   m_SourcePrefab: {fileID: 100100000, guid: 05ae247dfb11ce5498fd8466c689a3cc, type: 3}
 --- !u!1 &6040949543125475917 stripped
 GameObject:
@@ -142,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 035d864b08dbc4a4fbb7260e9262dacc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: emerald
+  playerInventory: {fileID: 0}
 --- !u!114 &4567437570800827495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,3 +158,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bfd2f71a18b109419a644063006e72e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bobSpeed: 2
+  bobHeight: 0.1
+  spinSpeed: 70
+--- !u!114 &2774905249904133942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6040949543125475917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f59dd2d7c62d2049bf529974c3bb717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemName: Emerald
+  icon: {fileID: 21300000, guid: e9a4692ef7a90d441bae4450077d031e, type: 3}
+  itemPrefab: {fileID: 6040949543125475917}
