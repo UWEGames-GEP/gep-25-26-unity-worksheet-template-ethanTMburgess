@@ -6,7 +6,7 @@ public class inventory : MonoBehaviour
     public GameManager gameManager;
     public List<ItemObject> items = new List<ItemObject>();
     
-    [Header("References")]
+    [Header("Spaces")]
     [SerializeField] private Transform worldItemsTransform; 
 
     [Header("Object Drop Distance")]
@@ -37,6 +37,7 @@ public class inventory : MonoBehaviour
         if(!items.Contains(item))
         {
             Debug.Log ("Item not found in inv" + item.itemName);
+
             return;
         }
 
@@ -44,15 +45,20 @@ public class inventory : MonoBehaviour
         {
             GameObject worldItems = GameObject.Find("WorldItems");
             if(worldItems == null)
+
             {
                 worldItems = new GameObject("WorldItems");
+
                 worldItems.transform.parent = null;
+
                 Debug.Log("Created WorldItems GameObject");
             }
             worldItemsTransform = worldItems.transform;
         }
 
+
         Vector3 dropPosition = transform.position + transform.forward * dropDistance;
+
         dropPosition.y = transform.position.y + 1 ;
 
         Vector3 pos = transform.position + transform.forward;
@@ -69,7 +75,7 @@ public class inventory : MonoBehaviour
         GameObject newItem = Instantiate(item.itemPrefab, dropPosition, Quaternion.identity);
         newItem.SetActive(true);
 
-        //first.gameObject.SetActive(false);
+    
 
         items.Remove(item);
         Debug.Log("Removed " + item.itemName + " from inventory");
@@ -79,7 +85,7 @@ public class inventory : MonoBehaviour
     {
         gameManager = FindAnyObjectByType<GameManager>();
         
-        // Try to find WorldItems
+        
         GameObject worldItems = GameObject.Find("WorldItems");
         if (worldItems != null)
         {
@@ -89,6 +95,7 @@ public class inventory : MonoBehaviour
         {
            
             Debug.LogWarning("WorldItems GameObject not found");
+
         }
     }
 
@@ -97,16 +104,22 @@ public class inventory : MonoBehaviour
     {
         if(items.Count == 0)
         {
+
+
             Debug.Log("Inventory is empty!");
+
             return;
+
         }
 
         ItemObject firstItem = items[0];
         if(firstItem == null)
         {
             Debug.Log("first item in inv is null. removed");
+
             items.RemoveAt(0);
             return;
+
         }
         removeItemFromInventory(firstItem);
     }
@@ -114,6 +127,7 @@ public class inventory : MonoBehaviour
      void Update() {
         {
             worldItemsTransform.parent = null;
+
 
             if(Input.GetKeyDown(KeyCode.Q))
             {
